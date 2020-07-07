@@ -7,7 +7,7 @@
 # install dnf official and epel dependences
 dnf config-manager --set-enabled PowerTools
 dnf install epel-release
-dnf install gcc gcc-c++ autoconf automake tar xz libtool bison libcurl libcurl-devel libsodium libsodium-devel openssl openssl-devel libzip libzip-devel libssh2 libssh2-devel gd ImageMagick ImageMagick-devel ghostscript zlib zlib-devel systemd-devel libxml2 libxml2-devel sqlite sqlite-devel re2c oniguruma oniguruma-devel
+dnf install gcc gcc-c++ autoconf automake tar xz libtool bison libcurl libcurl-devel libsodium libsodium-devel openssl openssl-devel libzip libzip-devel libssh2 libssh2-devel gd ImageMagick ImageMagick-devel ghostscript zlib zlib-devel systemd-devel libxml2 libxml2-devel sqlite sqlite-devel re2c oniguruma oniguruma-devel memcached libmemcached-devel
 
 # php configureflags
 ./configure --with-curl --enable-exif --enable-gd --with-webp --with-jpeg --with-freetype --enable-gd-jis-conv --enable-mbstring --with-mysqli --with-sodium --with-openssl --with-zip --with-zlib  --enable-ftp --enable-fpm --with-fpm-user=nginx --with-fpm-group=nginx --with-fpm-systemd --disable-short-tags --with-libdir=lib64
@@ -67,3 +67,6 @@ make install
 # php extension ssh2 install (same as above)
 curl -O https://pecl.php.net/get/ssh2-1.2.tgz
 # note that this version is not stable, check if update exists.
+
+# php extension memcached
+curl -O https://pecl.php.net/get/memcached-3.1.5.tgz
